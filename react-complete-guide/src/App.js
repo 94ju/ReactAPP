@@ -9,7 +9,8 @@ class App extends Component {
     person : [
       {name: "janith" ,age :24},
       {name: "udara" ,age :31}
-    ]
+    ],
+    showPerson:false
   }
   switchNameHandler =(newName) => {
 
@@ -29,6 +30,11 @@ class App extends Component {
       ]
     })
   }
+  tooglePersonHandler=()=>{
+      console.log("check");
+      const doesshow =this.state.showPerson;
+      this.setState({showPerson: !doesshow});
+  }
   render() {
     const style ={
       backgroundColor : 'white',
@@ -41,14 +47,19 @@ class App extends Component {
    return(
       <div className="App">
         <h1>Hi react </h1>
-        <button style={style} onClick={()=>this.switchNameHandler("target.value")}>Switch Button</button>
-        <Person name ="aa"  age ={this.state.person[0].age}/> 
-        
-        <Person click={this.switchNameHandler} 
-                onIn={this.namechangeHandler}
-                name ={this.state.person[0].name} 
-                age ={this.state.person[1].age}>My Hobby</Person>
-        <Person name="Aruna" age="24"></Person>
+        <button style={style} onClick={this.tooglePersonHandler}>Toogle Persons</button>
+      { this.state.showPerson ===true?
+         <div>
+            <Person name ="aa"  age ={this.state.person[0].age}/> 
+            
+            <Person click={this.switchNameHandler} 
+                    onIn={this.namechangeHandler}
+                    name ={this.state.person[0].name} 
+                    age ={this.state.person[1].age}>My Hobby</Person>
+            <Person name="Aruna" age="24"></Person>
+        </div>: null
+      }
+ 
       </div>
     )
       
