@@ -44,20 +44,26 @@ class App extends Component {
       cursor: 'pointer'
       // boxShadow:' 0 2px 9px #ccc'
     };
+    let person = null;
+    if(this.state.showPerson){
+      person =(    
+      <div>
+        <Person name ="aa"  age ={this.state.person[0].age}/> 
+        
+        <Person click={this.switchNameHandler} 
+                onIn={this.namechangeHandler}
+                name ={this.state.person[0].name} 
+                age ={this.state.person[1].age}>My Hobby</Person>
+        <Person name="Aruna" age="24"></Person>
+      </div>)
+
+    }
    return(
       <div className="App">
         <h1>Hi react </h1>
         <button style={style} onClick={this.tooglePersonHandler}>Toogle Persons</button>
-      { this.state.showPerson ===true?
-         <div>
-            <Person name ="aa"  age ={this.state.person[0].age}/> 
-            
-            <Person click={this.switchNameHandler} 
-                    onIn={this.namechangeHandler}
-                    name ={this.state.person[0].name} 
-                    age ={this.state.person[1].age}>My Hobby</Person>
-            <Person name="Aruna" age="24"></Person>
-        </div>: null
+      { 
+          person 
       }
  
       </div>
