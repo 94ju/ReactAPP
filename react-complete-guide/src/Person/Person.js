@@ -1,14 +1,11 @@
-import React from 'react'; 
-import './person.css';
+import React ,{Compoent} from 'react';
+import './Person.css';
 
-const person =(props ) =>{
-    return (
-        <div className="person">
-            {/* <p>I am {props.name} and I am {props.age} years old {props.children}</p> */}
-            <p onClick={props.click}>I am {props.name} and I am {props.age} years old </p>
-            <input onChange={props.onIn} type="text"></input>
-           
+const person = (propes) => {
+    return <div className="Person">
+        <p onClick={propes.click} > I am  {propes.name} and {propes.age} </p>
+        <p onClick={propes.click}>{propes.children}</p>
+        <input type='text' onChange={propes.changed} value={propes.name } ></input>
         </div>
-        ) 
-};
+}
 export default person;
