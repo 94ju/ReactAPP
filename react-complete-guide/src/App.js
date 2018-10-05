@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import classes from './App.css';
-
 import Person from './Person/Person';
 
 class App extends Component {
@@ -71,9 +70,7 @@ class App extends Component {
             
         </div>);    
         btnClass = classes.Red;      
-    }
-        
-    
+    }  
     let assingnedClasses = [];
     if(this.state.persons.length<= 2){
       assingnedClasses.push(classes.red);
