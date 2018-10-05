@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import classes from './App.css';
 
 import Person from './Person/Person';
 
 class App extends Component {
-  state = {
+  state = { 
     persons :[
       {id :'1', name : 'Janith' ,age :'24'},
       {id :'2', name : 'kamal', age:'13'},
@@ -54,13 +54,6 @@ class App extends Component {
     this.setState({persons:persons});
   }
   render() {
-     const style ={
-        backgroundColor :'green',
-        font : 'ingerit',
-        border : '1px solid blue',
-        padding : '8px',
-
-    }
     let persons = null;
     if(this.state.showPerson){
       persons =(      
@@ -81,19 +74,18 @@ class App extends Component {
           }
         
     
-    let classes = [];
+    let assingnedClasses = [];
     if(this.state.persons.length<= 2){
-      classes.push("red");
+      assingnedClasses.push(classes.red);
     }
     if(this.state.persons.length> 2){
-      classes.push("bold");
+      assingnedClasses.push(classes.bold);
     }
     return (
       
-      <div className="App"> 
-       <p className={classes}>check red </p>
+      <div className={classes.App}> 
+       <p className={assingnedClasses.join('')}>check red </p>
         <button
-        style = {style}
         onClick={this.tooglePersonHandler}> Search  </button>
         {persons}
       </div>

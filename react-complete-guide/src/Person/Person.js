@@ -1,10 +1,10 @@
 import React ,{Compoent} from 'react';
-import './Person.css';
+import classes from './Person.css';
  
 
 const person = (propes) => {
     return (
-        <div className="Person">
+        <div className={classes.Person}>
         <p onClick={propes.click} > I am  {propes.name} and {propes.age} </p>
         <p onClick={propes.click}>{propes.children}</p>
        
@@ -12,4 +12,4 @@ const person = (propes) => {
         </div>
     )
 };
-export default Radium(person);
+export default person;
