@@ -55,10 +55,11 @@ class App extends Component {
   }
   render() {
      const style ={
-        backgroundColour :'green',
+        backgroundColor :'green',
         font : 'ingerit',
         border : '1px solid blue',
-        padding : '8px'
+        padding : '8px',
+
     }
     let persons = null;
     if(this.state.showPerson){
@@ -73,16 +74,30 @@ class App extends Component {
               change={(event)=>this.namechangeHandler(event , person.id)}
               />
            })}
+            
+        </div>);
+             
+          
+          }
+        
     
-        </div>)
+    let classes = [];
+    if(this.state.persons.length<= 2){
+      classes.push("red");
+    }
+    if(this.state.persons.length> 2){
+      classes.push("bold");
     }
     return (
+      
       <div className="App"> 
+       <p className={classes}>check red </p>
         <button
         style = {style}
         onClick={this.tooglePersonHandler}> Search  </button>
         {persons}
       </div>
+     
     );
   }
 }
