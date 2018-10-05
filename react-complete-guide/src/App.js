@@ -55,6 +55,7 @@ class App extends Component {
   }
   render() {
     let persons = null;
+    let btnClass = '';
     if(this.state.showPerson){
       persons =(      
          <div>
@@ -68,10 +69,9 @@ class App extends Component {
               />
            })}
             
-        </div>);
-             
-          
-          }
+        </div>);    
+        btnClass = classes.Red;      
+    }
         
     
     let assingnedClasses = [];
@@ -85,7 +85,7 @@ class App extends Component {
       
       <div className={classes.App}> 
        <p className={assingnedClasses.join('')}>check red </p>
-        <button
+        <button className={btnClass}
         onClick={this.tooglePersonHandler}> Search  </button>
         {persons}
       </div>
