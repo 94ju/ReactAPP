@@ -1,8 +1,14 @@
 import React from 'react';
-import classes from './Cockpit.css'
+import classes from './Cockpit.css';
+
 
 const cockpit =(propes) =>{
     let assingnedClasses = [];
+    let btnClass='';
+    if (propes.showPerson){
+        btnClass=classes.red;
+    }
+ 
     if(propes.persons.length<= 2){
       assingnedClasses.push(classes.red);
     }
@@ -13,7 +19,7 @@ const cockpit =(propes) =>{
         <div className={classes.Cockpit}>
             <p className={assingnedClasses.join('')}>check red </p>
             <button className={btnClass}
-            onClick={this.tooglePersonHandler}> Search  </button>
+            onClick={propes.check}> Search  </button>
         </div>
 
         

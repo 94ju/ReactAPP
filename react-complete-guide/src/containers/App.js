@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import logo from './logo.svg';
 import classes from './App.css';
 import Persons from '../Components/Persons/persons';
+import Cockpit from '../Components/Cockpit/Cockpit';
 
 class App extends Component {
   state = { 
@@ -23,16 +24,16 @@ class App extends Component {
     })
   }
   namechangeHandler = (event,id) =>{
-    const personIndex = this.state.persons.findIndex(p => {
+    const personIndex = this.state.Persons.findIndex(p => {
       return p.id == id;
     });
     const person = {
-      ...this.state.persons[personIndex]
+      ...this.state.Persons[personIndex]
     }
     person.name = event.target.value;
-    const persons =[...this.state.persons];
-    persons[personIndex]=persons;
-    this.setState({persons:persons});
+    const persons =[...this.state.Persons];
+    Persons[personIndex]=Persons;
+    this.setState({Persons:Persons});
 
     this.setState ({
       persons :[
@@ -54,27 +55,22 @@ class App extends Component {
   }
   render() {
     let persons = null;
-    let btnClass = '';
     if(this.state.showPerson){
-      persons =(      
-         <div>
-           <Persons>
-              persons={this.state.persons}
-              clicked={this.deletePersonHandler}
-              changed={this.namechangeHandler}
-               
-           </Persons>    
-        </div>);    
-        btnClass = classes.Red;      
+      persons =<Persons
+                persons={this.state.persons}
+                clicked={this.deletePersonHandler}
+                changed={this.namechangeHandler}
+                />    
     }  
 
     return (
       
       <div className={classes.App}> 
-       {/* <p className={assingnedClasses.join('')}>check red </p>
-        <button className={btnClass}
-        onClick={this.tooglePersonHandler}> Search  </button> */}
-        {persons}
+        <Cockpit 
+          showPerson= {this.state.showPerson}
+          persons={this.state.persons}
+          check={this.tooglePersonHandler}/>
+          {persons}
       </div>
      
     );
