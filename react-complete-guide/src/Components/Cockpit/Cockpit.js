@@ -1,26 +1,30 @@
 import React from 'react';
 import classes from './Cockpit.css';
+import Aux from '../../hoc/Aux';
 
 
-const cockpit =(propes) =>{
+const cockpit =(props) =>{
     let assingnedClasses = [];
-    let btnClass='';
-    if (propes.showPerson){
-        btnClass=classes.red;
+    // let btnClass=classes.Button;
+    let btnClass=[];
+    if (props.showPerson){
+        //btnClass=[classes.Button ,classes.Red].join('');
+        btnClass.push(classes.Button.Red);
+       // assingnedClasses.push(classes.red);
     }
  
-    if(propes.persons.length<= 2){
+    if(props.persons.length<= 2){
       assingnedClasses.push(classes.red);
     }
-    if(propes.persons.length> 2){
+    if(props.persons.length> 2){
       assingnedClasses.push(classes.bold);
     }
     return(
-        <div className={classes.Cockpit}>
+        <Aux>
             <p className={assingnedClasses.join('')}>check red </p>
             <button className={btnClass}
-            onClick={propes.check}> Search  </button>
-        </div>
+            onClick={props.check}> Search  </button>
+        </Aux>
 
         
     );

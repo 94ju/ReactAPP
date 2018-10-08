@@ -68,9 +68,10 @@ componentWillUpdate(nextProps,nextState){
     })
   }
   tooglePersonHandler = () =>{
-        showPerson : true
+        //showPerson : true
         const deskshow =this.state.showPerson;
         this.setState({showPerson:!deskshow});
+        //this.button
   }
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons]
