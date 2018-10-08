@@ -14,6 +14,9 @@ class Persons extends Component{
           
           console.log('this is from persons.js constructor',props);
       }
+      componentWillReceiveProps(nextProps){
+            console.log('this is from persons.js update');
+      }
     render(){
         console.log('this is from render from persons');
         return this.props.persons.map((person ,index) =>{ 

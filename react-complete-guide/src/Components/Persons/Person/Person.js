@@ -14,7 +14,7 @@ class Person extends Component{
           console.log('this is from person.js constructor',props);
       }
         render(){
-            //console.log('this is from person.js render',props);
+          console.log('this is from person.js render');
           return (
             //console.log('this is from person.js render',props);
               <div className={classes.Person}>
