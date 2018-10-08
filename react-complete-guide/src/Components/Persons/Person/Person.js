@@ -10,7 +10,6 @@ class Person extends Component{
       }
       constructor (props){
           super(props);
-          
           console.log('this is from person.js constructor',props);
       }
         render(){
