@@ -5,6 +5,20 @@ import Persons from '../Components/Persons/persons';
 import Cockpit from '../Components/Cockpit/Cockpit';
 
 class App extends Component {
+  componentWillMount (){
+    console.log('this is app.js inside componentWill mount');
+  }
+  componentDidMount(){
+    console.log('this is app.js inside comonentDid mount');
+  }
+  constructor (props){
+      super(props);
+      
+      console.log('this is from app.js',props);
+  }
+  
+ 
+  
   state = { 
     persons :[
       {id :'1', name : 'Janith' ,age :'24'},

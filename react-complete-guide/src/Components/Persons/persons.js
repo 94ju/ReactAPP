@@ -3,7 +3,19 @@ import Person from './Person/Person'
 
 
 class Persons extends Component{
+    componentWillMount (){
+        console.log('this is persons.js inside componentWill mount');
+      }
+      componentDidMount(){
+        console.log('this is persons.js inside comonentDid mount');
+      }
+      constructor (props){
+          super(props);
+          
+          console.log('this is from persons.js',props);
+      }
     render(){
+        console.log('this is from render');
         return this.props.persons.map((person ,index) =>{ 
             return <Person
                 click ={()=>this.props.clicked(index)}
