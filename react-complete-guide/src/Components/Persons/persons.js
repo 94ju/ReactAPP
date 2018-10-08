@@ -12,10 +12,10 @@ class Persons extends Component{
       constructor (props){
           super(props);
           
-          console.log('this is from persons.js',props);
+          console.log('this is from persons.js constructor',props);
       }
     render(){
-        console.log('this is from render');
+        console.log('this is from render from persons');
         return this.props.persons.map((person ,index) =>{ 
             return <Person
                 click ={()=>this.props.clicked(index)}

@@ -14,7 +14,7 @@ class App extends Component {
   constructor (props){
       super(props);
       
-      console.log('this is from app.js',props);
+      console.log('this is from app.js constructor',props);
   }
   
  

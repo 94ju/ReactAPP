@@ -11,10 +11,12 @@ class Person extends Component{
       constructor (props){
           super(props);
           
-          console.log('this is from person.js',props);
+          console.log('this is from person.js constructor',props);
       }
         render(){
+            //console.log('this is from person.js render',props);
           return (
+            //console.log('this is from person.js render',props);
               <div className={classes.Person}>
               <p onClick={this.props.click} > I am  {this.props.name} and {this.props.age} </p>
               <p onClick={this.props.click}>{this.props.children}</p>
